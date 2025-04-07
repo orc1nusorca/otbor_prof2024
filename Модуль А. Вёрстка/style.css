@@ -1,0 +1,2071 @@
+:root {
+    --font-family: "Unbounded", sans-serif;
+    --bg-color-light: #4385FF;
+  }
+
+*, *::after, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-align: center;
+    text-decoration: none;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    width:100%;
+    overflow-x: hidden;
+    background-color: #fff;
+    line-height: 150%;
+}
+
+.header {
+    background-color: var(--bg-color-light);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 30px 0px 110px 0px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .container {
+    padding: 5px 0;
+}
+
+.header-nav__list {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.header-nav__list-item a {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 28px;
+    text-transform: uppercase;
+    line-height: 150%;
+    color: #fff;
+    transition: all 0.2s ease;
+}
+
+.header-nav__list-item a:hover {
+    font-size: 36px;
+    transition: all 0.2s ease;
+    text-shadow: 2px 2px 2px rgba(85, 93, 36, 0.3);
+}
+
+.mobile__header-nav__menu, .mobile__header-nav__menu-button {
+    display: none;
+}
+
+.mobile__header-nav__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 35px;
+    margin-right: 355px;
+}
+
+.section-title {
+    font-family: var(--font-family);
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 150%;
+    text-align: center;
+    color: #000;
+    padding-bottom: 25px;
+}
+
+.slider-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative; /* Для позиционирования точек */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Добавил плавность для анимации */
+}
+
+.slide {
+    flex: 0 0 100%;
+    display: flex;
+    padding: 40px;
+}
+
+.slide-image {
+    width: 700px;
+    height: 500px;
+    object-fit: cover; /* чтобы изображения не вытягивались */
+    border-radius: 5px;
+}
+
+.slide-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding: 25px;
+}
+
+
+.slide-type {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 30px;
+    color: #000;
+    border: var(--bg-color-light) 4px solid;
+    padding: 8px;
+    width: max-content;
+}
+
+.slide-description {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #000;
+}
+
+.slide-button {
+    display: inline-block;
+    background-color: var(--bg-color-light);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #fff;
+    padding: 18px 34px;
+    border-radius: 25px;
+    width: max-content;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.slide-button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ddd;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active-dot {
+    background-color: var(--bg-color-light);
+}
+
+.slide.active {
+    transform: translateX(0);
+}
+
+.search-container {
+    display: flex;
+    gap: 25px;
+    padding: 15px 0;
+}
+
+.search-container__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.animal-search {
+    padding: 15px 35px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 30px;
+    color: #000;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 25px;
+    width: 1240px;
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+}
+
+.suggestions-list {
+    list-style: none;
+    padding: 10px 35px;
+    margin: 0;
+    width: 1240px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 30px;
+    color: #000;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 25px;
+    display: none; /* Скрываем список подсказок по умолчанию */
+    background-color: white;
+}
+
+.suggestions-list li {
+    cursor: pointer;
+    padding: 5px 0;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
+.search-button {
+    background-color: var(--bg-color-light);
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 125%;
+    color: #fff;
+    padding: 18px 54px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    max-height: 70px;
+    transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.company-facts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    align-content: space-around;
+}
+
+.fact {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.fact-icon {
+    width: 71px;
+    height: 71px;
+    object-fit: contain; /* Масштабирует изображение, чтобы оно полностью помещалось */
+}
+
+.fact-text {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 36px;
+    color: #000;
+    line-height: 150%;
+}
+
+.animal-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.animal-card {
+    border: 3px solid var(--bg-color-light);
+    border-radius: 15px;
+    padding: 15px;
+    width: 400px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.animal-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.animal-card .location {
+    font-style: italic;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.animal-card .phone {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.animal-card .date {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    color: #888;
+}
+
+.animal-card .user-type {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+/* Стили для индикатора зарегистрированного пользователя */
+.user-type.registered {
+    color: rgb(69, 160, 69);
+}
+
+/* Стили для индикатора незарегистрированного пользователя */
+.user-type.unregistered {
+    color: rgb(223, 14, 14);
+}
+
+.search-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 800px;
+    margin: 0 auto; 
+    padding: 20px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 26px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px 20px;
+}
+
+.form-group label {
+    padding-bottom: 10px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.form-group input[type="text"], .form-group select {
+    font-family: var(--font-family);
+    font-size: 18px;
+    padding: 10px;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 15px;
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+}
+
+.search-form__submit {
+    padding: 16px 38px;
+    background-color: var(--bg-color-light);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 22px;
+    max-width: max-content;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+.search-form__submit:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.reviews-slider-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: hidden; /* скрываем прокручиваемые элементы */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 26px;
+    padding: 20px;
+}
+
+.reviews-slider {
+    display: flex;
+    transition: all 0.5s ease; /* Анимация */
+}
+
+.review {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+    text-align: center;
+}
+
+.review-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 25px;
+    display: block; /* Для выравнивания по центру */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-author {
+    padding-bottom: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.review-text {
+    padding: 10px 0;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+}
+
+.review-date {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 16px;
+    color: #888;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute; /* Размещаем поверх слайдера */
+    width: calc(100% - 80px); /* учитываем отступ */
+    top: 50%;
+    left: 40px; /* добавляем отступ */
+    right: 40px; /* добавляем отступ */
+    transform: translateY(-50%);
+}
+
+.slider-controls .slide-button {
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.slide-button:hover {
+    opacity: 1;
+}
+
+.subscribe__wrapper {
+    border: 5px solid var(--bg-color-light);
+    border-radius: 25px;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 25px 25px 60px;
+}
+
+.subscriptionForm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0px 25px;
+    display: flex;
+    flex-direction: column;
+}
+  
+.subscriptionForm div {
+    padding-bottom: 20px;
+}
+
+.formRow {
+    display: flex;
+    gap: 20px;
+}
+
+.formRow input[type="checkbox"] {
+    appearance: none; /* убираем стандартное оформление чекбокса */
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative; /* для позиционирования "галочки" */
+    vertical-align: middle;
+}
+  
+  
+.formRow input[type="checkbox"]:checked {
+    border-color: var(--bg-color-light); /* рамка при активации */
+    background-color: var(--bg-color-light); /* фон при активации */
+}
+  
+form input[type="checkbox"]:checked::before {
+    content: ""; /* Псевдоэлемент для галочки */
+    position: absolute;
+    left: 5px;
+    top: 2px;
+    width: 4px;
+    height: 8px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+  
+.subscriptionForm label {
+    display: block;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+    padding-bottom: 10px;
+    line-height: 150%;
+}
+  
+.subscriptionForm input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 18px;
+}
+  
+.subscriptionForm button {
+    padding: 16px 38px;
+    background-color: var(--bg-color-light);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 22px;
+    max-width: max-content;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+.subscriptionForm button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.footer {
+    background-color: var(--bg-color-light);
+}
+
+.footer .container {
+    padding: 30px 0 50px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Разрешает перенос контента на новые строки */
+    gap: 25px;
+}
+
+.contact-info {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    width: 800px;
+}
+
+.contact-info p {
+    padding: 15px 0;
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: #fff;
+}
+
+.contact-info a {
+    padding: 15px 0;
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* делаем меню в одну строку */
+    flex-wrap: wrap; /* Разрешаем перенос пунктов меню на новые строки */
+    gap: 25px;
+    justify-content: center;
+}
+
+.footer-nav a {
+    padding: 15px 0;
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+    transition: text-decoration 0.3s ease;
+}
+
+/* авторизация */
+
+.authorization .container {
+    padding: 80px;
+}
+
+.authorization .container .section-title {
+    padding-bottom: 80px;
+}
+
+.loginSection {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 50px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 25px;
+}
+
+.loginSectionForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.loginSectionForm label {
+    display: block;
+    padding-bottom: 10px;
+    font-family: var(--font-family);
+    font-size: 18px;
+}
+
+.loginSectionForm input[type="email"], .loginSectionForm input[type="password"], .loginSectionForm button {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid #ccc;
+    border-radius: 10px;
+    font-family: var(--font-family);
+    font-size: 18px;
+}
+
+.loginSectionForm button {
+    background-color: var(--bg-color-light);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px; /* добавил отступ между кнопками */
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: #fff;
+    border-radius: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.loginSectionForm button #resetPasswordBtn {
+    background-color: transparent; /* прозрачный фон */
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    text-decoration: underline; /* добавляем подчеркивание */
+}
+
+.loginSectionForm button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+/* регистрация */
+
+.registerForm {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.registerForm .form-group {
+    padding: 0;
+}
+
+.registerForm .form-group label {
+    display: block;
+    font-family: var(--font-family);
+    font-size: 24px;
+}
+
+.registerForm .form-group input[type="email"],
+.registerForm .form-group input[type="text"],
+.registerForm .form-group input[type="tel"],
+.registerForm .form-group input[type="password"],
+.registerForm button {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 16px;
+    font-family: var(--font-family);
+    font-size: 24px;
+}
+
+.registerForm .formRow label {
+    font-family: var(--font-family);
+    font-size: 24px;
+}
+
+.registerForm button {
+    background-color: var(--bg-color-light);
+    color: #fff;
+    border-radius: 16px;
+    font-family: var(--font-family);
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    max-width: max-content;
+    padding: 16px 22px;
+}
+
+.profileSection {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 25px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.info-item label {
+    font-weight: bold;
+    width: 250px;
+    text-align: left;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+}
+.info-item span{
+    margin-right: auto;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.edit-btn {
+    background-color: transparent;
+    color: #333;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 12px;
+    padding: 10px 15px;
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+/* Стили для объявлений */
+
+.ads-section {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.ads-group {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.ads-group h4{
+    font-family: var(--font-family);
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.ad-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    gap: 10px;
+    align-items: center;
+}
+
+.ad-item div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.ad-item .ad-photo {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.ad-item p {
+    font-family: var(--font-family);
+    font-size: 16px;
+}
+
+.ad-buttons {
+    margin-left: auto;
+}
+
+.ad-buttons button {
+    background-color: #4CAF50;
+    color: white;
+    font-family: var(--font-family);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.ad-buttons .edit-btn:hover {
+    background-color: #29612b;
+    transition: background-color 0.3s ease;
+}
+
+.ad-buttons .delete-btn:hover {
+    background-color: #641c16; /* красный цвет для кнопки удаления */
+    transition: background-color 0.3s ease;
+}
+
+.ad-buttons button.delete-btn {
+    background-color: #f44336; /* красный цвет для кнопки удаления */
+    transition: background-color 0.3s ease;
+}
+
+.addAdSection {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 25px;
+}
+
+.addAdSection .form-group input[type="email"],
+.addAdSection .form-group input[type="text"],
+.addAdSection .form-group input[type="tel"],
+.addAdSection .form-group input[type="password"],
+.addAdSection .form-group input[type="date"],
+.addAdSection .form-group textarea,
+.addAdSection form button {
+    width: 100%;
+    padding: 12px;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 16px;
+    font-family: var(--font-family);
+    font-size: 24px;
+}
+
+.addAdSection .form-group textarea {
+    height: 100px;
+}
+.addAdSection form button {
+    background-color: var(--bg-color-light);
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 18px;
+    color: #fff;
+    border-radius: 18px;
+    transition: background-color 0.3s ease;
+    margin-top: 25px;
+}
+
+.addAdSection form button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.register-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.register-container .toggle-block {
+    display: none;
+}
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+#registerOptionYes:checked ~ .formColumn .toggle-block {
+    display: block;
+}
+
+.toggle-block {
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+.filtersCheck .container {
+    padding: 30px 0 10px;
+}
+
+.filters {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filters .filter-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap; /* Перенос фильтров на новую строку если не хватает места */
+}
+
+.filters label {
+   cursor: pointer; /* курсор-палец при наведении */
+}
+
+.announcement {
+    padding: 20px 0;
+}
+
+.ads-group {
+    margin-bottom: 20px;
+    background-color: #fff; 
+}
+
+.moderBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #eee; /* Разделитель между заголовком и объявлениями */
+}
+
+.moderBlock .ad-buttons .edit-btn {
+    background-color: var(--bg-color-light);
+    transition: background-color 0.3s ease;
+}
+
+.moderBlock .ad-buttons .edit-btn:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+.moderBlock h4 {
+  margin: 0; 
+}
+
+.ad-buttons {
+    display: flex;
+    gap: 5px;
+}
+
+.ad-buttons button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.ad-item:last-child {
+    border-bottom: none;
+}
+
+#search-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto; 
+    padding: 20px;
+    border: 5px solid var(--bg-color-light);
+    border-radius: 26px;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+#search-form label {
+    padding-bottom: 10px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 22px;
+}
+
+#search-form input {
+    font-family: var(--font-family);
+    font-size: 18px;
+    padding: 10px;
+    border: 3px solid var(--bg-color-light);
+    border-radius: 15px;
+    box-sizing: border-box; /* чтобы padding не увеличивал ширину */
+}
+
+#search-form button {
+    padding: 16px 38px;
+    background-color: var(--bg-color-light);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: var(--font-family);
+    font-size: 22px;
+    max-width: max-content;
+    align-self: center;
+    transition: background-color 0.3s ease;
+}
+
+#search-form button:hover {
+    background-color: #0056b3;
+    transition: background-color 0.3s ease;
+}
+
+#results-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#results-table th, #results-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#results-table th {
+    background-color: #f2f2f2;
+}
+
+#results-table img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+#pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    margin: 2px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: black;
+}
+
+#pagination a:hover {
+    background-color: #eee;
+}
+
+#pagination a.active {
+    background-color: #ccc;
+}
+
+.card-wrapper {
+    width: 100%;
+    max-width: 800px;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.animal-image {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: 26px;
+}
+
+.card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.finder-info, .details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.finder-info h2, .details h2 {
+    font-weight: 400;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 5px;
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: 22px;
+}
+
+.finder-info p, .details p {
+    margin: 0;
+    font-family: var(--font-family);
+    font-size: 20px;
+}
+
+.finder-info strong, .details strong {
+    font-weight: bold;
+}
+
+.finder-phone, .finder-email {
+    text-decoration: none;
+    color: var(--bg-color-light);
+}
+
+.finder-phone:hover, .finder-email:hover {
+    text-decoration: underline;
+}
+
+@media screen and (width <= 768px) {
+    .container {
+        max-width: 94vw;
+        padding: 1.5vw 0px 3.5vw 0px;
+    }
+
+    .header .container {
+        padding: 2vw 0px 1.5vw 0px;
+    }
+
+    .header-nav__logo a img {
+        width: 45vw;
+        height: auto;
+    }
+
+    .header-nav__list {
+        gap: 15px;
+        margin-right: 0;
+        display: none;
+    }
+
+    .header-nav__list-item a, .header-nav__phone-number a {
+        font-size: 2vw;
+    }
+
+    .header-nav__list-item a:hover {
+        font-size: 2.5vw;
+    }
+
+    .header-nav__phone {
+        display: none;
+    }
+
+    .mobile__header-nav__menu-button {
+        display: flex;
+        align-self: center;
+        z-index: 3;
+    }
+
+    .mobile__header-nav__menu-button svg {
+        width: 11vw;
+        height: 15vw;
+    }
+
+    .mobile__header-nav__menu {
+        display: flex;
+        right: -100vw;
+        position: fixed;
+        top: -2px;
+        transition: all 1.5s;
+        z-index: 3;
+    }
+    .mobile__header-nav__menu__show {
+        right: 0;
+        z-index: 1;
+        transition: all 1.5s;
+    }
+    
+    .mobile__header-nav__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        width: 80vw; 
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 4px;
+        padding-top: 165px;
+        padding-bottom: 165px;
+        box-shadow: 0 0 100px #888;
+    }
+
+    .mobile__header-nav__list-item {
+        padding-bottom: 15px;
+        width: 100%;
+        text-align: end;
+        padding-right: 35px;
+        border-bottom: solid 3px #888;
+        box-shadow: 0px 10px 10px #888;
+    }
+
+    .mobile__header-nav__list-item a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 5vw;
+        line-height: 150%;
+        color: #000;
+    }
+
+    .section-title {
+        font-size: 6.5vw;
+    }
+
+    .slider-container {
+        max-width: 98vw;
+    }
+
+    .slide {
+        flex-direction: column;
+        align-items: center;
+        padding: 4vw 2vw;
+    }
+
+    .slide-content {
+        padding: 5vw;
+        align-items: center;
+        gap: 3vw;
+    }
+
+    .slide-image {
+        width: 75vw;
+        height: 45vw;
+    }
+
+    .slide-type {
+        font-size: 4vw;
+        border: none;
+        padding: 0;
+    }
+
+    .slide-description, .slide-button {
+        font-size: 3.5vw;
+    }
+
+    .slide-button {
+        padding: 3vw 5vw;
+    }
+
+    .search-container {
+        flex-direction: column;
+        gap: 3vw;
+        align-items: center;
+    }
+
+    .animal-search {
+        padding: 4vw 5vw;
+        font-size: 4vw;
+        width: 90vw;
+    }
+
+    .suggestions-list {
+        width: 90vw;
+        font-size: 4vw;
+    }
+
+    .search-button {
+        width: 90vw;
+        font-size: 4vw;
+        padding: 4vw 5vw;
+        max-height: unset;
+    }
+
+    .fact {
+        gap: 3vw;
+    }
+
+    .fact-text {
+        font-size: 4vw;
+    }
+
+    .animal-card {
+        width: 85vw;
+        gap: 5vw;
+    }
+
+    .animal-card img {
+        height: 40vw;
+    }
+
+    .animal-card .location, .animal-card .phone {
+        font-size: 4vw;
+    }
+
+    .animal-card .date, .animal-card .user-type {
+        font-size: 3.5vw;
+    }
+
+    .search-form {
+        max-width: 85vw;
+    }
+
+    .form-group label, .search-form__submit {
+        font-size: 4vw;
+    }
+
+    .form-group input[type="text"], .form-group select {
+        font-size: 3.5vw;
+    }
+
+    .reviews-slider-container {
+        max-width: 90vw;
+    }
+
+    .review-author, .review-text, .review-date {
+        font-size: 3.5vw;
+    }
+
+    .slider-controls .slide-button {
+        font-size: 2.5vw;
+    }
+
+    .subscribe__wrapper, .subscriptionForm {
+        max-width: 85vw;
+    }
+
+    .subscriptionForm {
+        padding: 0 3vw;
+    }
+
+    .subscriptionForm label, .subscriptionForm input[type="email"], .contact-info p, .contact-info a, .footer-nav a {
+        font-size: 4vw;
+    }
+
+    .subscriptionForm button {
+        font-size: 3.5vw;
+    }
+
+    .contact-info {
+        width: 90vw;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .loginSection {
+        padding: 2vw;
+    }
+
+    .loginSectionForm {
+        padding: 15px;
+    }
+    
+    .loginSectionForm input[type="email"], .loginSectionForm input[type="password"], .loginSectionForm button {
+        font-size: 0.9rem;
+    }
+
+    .profileSection {
+        max-width: 95vw;
+        padding: 5vw;
+    }
+
+    .info-item label {
+        width: 30vw;
+        font-size: 3vw;
+        line-height: 150%;
+    }
+    .info-item span{
+        font-size: 2.75vw;
+    }
+    
+    .edit-btn {
+        padding: 2vw 3vw;
+        font-size: 3vw;
+    }
+
+    .ads-group h4{
+        font-size: 3.75vw;
+    }
+    
+    .ad-item {
+        padding: 3.5vw;
+        justify-content: center;
+    }
+    
+    .ad-item div {
+        gap: 3vw;
+        text-align: center;
+    }
+    
+    .ad-item .ad-photo {
+        margin-right: 10px;
+    }
+    
+    .ad-item p {
+        font-size: 3.5vw;
+        line-height: 150%;
+    }
+
+    .ad-buttons {
+        margin: 0;
+    }
+    
+    .ad-buttons button {
+        font-size: 3.5vw;
+        padding: 5px 10px;
+    } 
+
+    .addAdSection {
+        padding: 3vw;
+    }
+
+    .addAdSection .form-group {
+        padding: 3vw;
+    }
+
+    .addAdSection .form-group label {
+        font-size: 5vw;
+        line-height: 150%;
+    }
+
+    .addAdSection  .register-container {
+        gap: 3vw;
+    }
+
+    .authorization .container {
+        max-width: 94vw;
+        padding: 10vw 5vw;
+    }
+
+    .authorization .container .section-title {
+        padding-bottom: 5vw;
+    }
+
+    .registerForm button {
+        font-size: 5vw;
+    }
+
+    .registerForm .formRow label {
+        font-size: 4.5vw;
+    }
+}
+
+@media (width <= 920px) and (width > 768px) {
+    .container {
+        max-width: 92vw;
+        padding: 1.5vw 0px 2.5vw 0px;
+    }
+
+    .header .container {
+        padding: 1vw 0 1.5vw 0;
+    }
+
+    .header-nav__logo a img {
+        width: 250px;
+        height: auto;
+    }
+
+    .header-nav__list {
+        gap: 15px;
+        margin-right: 0;
+        display: none;
+    }
+
+    .header-nav__list-item a {
+        font-size: 1.85vw;
+    }
+
+    .header-nav__list-item a:hover {
+        font-size: 2.1vw;
+    }
+
+    .header-nav__phone {
+        display: none;
+    }
+
+    .mobile__header-nav__menu-button {
+        display: flex;
+        align-self: center;
+        z-index: 3;
+    }
+
+    .mobile__header-nav__menu {
+        display: flex;
+        right: -100vw;
+        position: fixed;
+        top: -2px;
+        transition: all 1.5s;
+        z-index: 3;
+    }
+    .mobile__header-nav__menu__show {
+        right: 0;
+        z-index: 1;
+        transition: all 1.5s;
+    }
+    
+    .mobile__header-nav__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        height: 100vh;
+        width: 80vw; 
+        justify-content: space-evenly;
+        flex-direction: column;
+        background-color: #fff;
+        border-radius: 4px;
+        padding-top: 165px;
+        padding-bottom: 165px;
+        box-shadow: 0 0 100px #888;
+    }
+
+    .mobile__header-nav__list-item {
+        padding-bottom: 15px;
+        width: 100%;
+        text-align: end;
+        padding-right: 35px;
+        border-bottom: solid 3px #888;
+        box-shadow: 0px 10px 10px #888;
+    }
+
+    .mobile__header-nav__list-item a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 5vw;
+        line-height: 150%;
+        color: #000;
+    }
+
+    .section-title {
+        font-size: 3.5vw;
+    }
+
+    .slider-container {
+        max-width: 1100px;
+    }
+
+    .slide-image {
+        width: 450px;
+        height: 325px;
+    }
+
+    .slide-type {
+        font-size: 2vw;
+    }
+
+    .slide-description, .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .search-container {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .animal-search {
+        padding: 15px 35px;
+        font-size: 2vw;
+        width: 70vw;
+    }
+
+    .suggestions-list {
+        width: 70vw;
+        font-size: 2vw;
+    }
+
+    .search-button {
+        font-size: 1.85vw;
+    }
+
+    .fact {
+        gap: 3vw;
+    }
+
+    .fact-text {
+        font-size: 2vw;
+    }
+
+    .animal-card {
+        width: 25vw;
+    }
+
+    .animal-card img {
+        height: 20vw;
+    }
+
+    .animal-card .location, .animal-card .phone {
+        font-size: 1.5vw;
+    }
+
+    .animal-card .date, .animal-card .user-type {
+        font-size: 1.45vw;
+    }
+
+    .search-form {
+        max-width: 55vw;
+    }
+
+    .form-group label, .search-form__submit {
+        font-size: 1.75vw;
+    }
+
+    .form-group input[type="text"], .form-group select {
+        font-size: 1.5vw;
+    }
+
+    .reviews-slider-container {
+        max-width: 60vw;
+    }
+
+    .review-author, .review-text, .review-date {
+        font-size: 1.5vw;
+    }
+
+    .slider-controls .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .subscribe__wrapper, .subscriptionForm {
+        max-width: 50vw;
+    }
+
+    .subscriptionForm label, .subscriptionForm input[type="email"], .contact-info p, .contact-info a, .footer-nav a {
+        font-size: 1.65vw;
+    }
+
+    .subscriptionForm button {
+        font-size: 1.75vw;
+    }
+
+    .contact-info {
+        width: 55vw;
+    }
+
+    .profileSection {
+        max-width: 90vw;
+        padding: 3vw;
+    }
+
+    .info-item label {
+        width: 25vw;
+        font-size: 1.75vw;
+    }
+    .info-item span{
+        font-size: 1.75vw;
+    }
+    
+    .edit-btn {
+        padding: 10px 15px;
+        font-size: 1.75vw;
+    }
+
+    .ads-group h4{
+        font-size: 1.75vw;
+    }
+    
+    .ad-item {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.5vw;
+        gap: 0px;
+    }
+    
+    .ad-item div {
+        gap: 5px;
+    }
+    
+    .ad-item .ad-photo {
+        margin-right: 10px;
+    }
+    
+    .ad-item p {
+        font-size: 1.5vw;
+    }
+    
+    .ad-buttons button {
+        font-size: 1.5vw;
+        padding: 5px 10px;
+    } 
+}
+
+@media (width > 920px) and (width <= 1355px) {
+    .container {
+        max-width: 92vw;
+        padding: 1.5vw 0px 2.5vw 0px;
+    }
+
+    .header .container {
+        padding: 1vw 0 1.5vw 0;
+    }
+
+    .header-nav__logo a img {
+        width: 250px;
+        height: auto;
+    }
+
+    .header-nav__list {
+        gap: 15px;
+        margin-right: 0;
+    }
+
+    .header-nav__list-item a {
+        font-size: 1.85vw;
+    }
+
+    .header-nav__list-item a:hover {
+        font-size: 2.1vw;
+    }
+
+    .section-title {
+        font-size: 3.5vw;
+    }
+
+    .slider-container {
+        max-width: 1100px;
+    }
+
+    .slide-image {
+        width: 450px;
+        height: 325px;
+    }
+
+    .slide-type {
+        font-size: 2vw;
+    }
+
+    .slide-description, .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .search-container {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .animal-search {
+        padding: 15px 35px;
+        font-size: 2vw;
+        width: 70vw;
+    }
+
+    .suggestions-list {
+        width: 70vw;
+        font-size: 2vw;
+    }
+
+    .search-button {
+        font-size: 1.85vw;
+    }
+
+    .fact {
+        gap: 3vw;
+    }
+
+    .fact-text {
+        font-size: 2vw;
+    }
+
+    .animal-card {
+        width: 25vw;
+    }
+
+    .animal-card img {
+        height: 20vw;
+    }
+
+    .animal-card .location, .animal-card .phone {
+        font-size: 1.5vw;
+    }
+
+    .animal-card .date, .animal-card .user-type {
+        font-size: 1.45vw;
+    }
+
+    .search-form {
+        max-width: 55vw;
+    }
+
+    .form-group label, .search-form__submit {
+        font-size: 1.75vw;
+    }
+
+    .form-group input[type="text"], .form-group select {
+        font-size: 1.5vw;
+    }
+
+    .reviews-slider-container {
+        max-width: 60vw;
+    }
+
+    .review-author, .review-text, .review-date {
+        font-size: 1.5vw;
+    }
+
+    .slider-controls .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .subscribe__wrapper, .subscriptionForm {
+        max-width: 50vw;
+    }
+
+    .subscriptionForm label, .subscriptionForm input[type="email"], .contact-info p, .contact-info a, .footer-nav a {
+        font-size: 1.65vw;
+    }
+
+    .subscriptionForm button {
+        font-size: 1.75vw;
+    }
+
+    .contact-info {
+        width: 55vw;
+    }
+
+    .profileSection {
+        max-width: 90vw;
+        padding: 3vw;
+    }
+
+    .info-item label {
+        width: 25vw;
+        font-size: 1.75vw;
+    }
+    .info-item span{
+        font-size: 1.75vw;
+    }
+    
+    .edit-btn {
+        padding: 10px 15px;
+        font-size: 1.75vw;
+    }
+
+    .ads-group h4{
+        font-size: 1.75vw;
+    }
+    
+    .ad-item {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 1.5vw;
+        gap: 0px;
+    }
+    
+    .ad-item div {
+        gap: 5px;
+    }
+    
+    .ad-item .ad-photo {
+        margin-right: 10px;
+    }
+    
+    .ad-item p {
+        font-size: 1.5vw;
+    }
+    
+    .ad-buttons button {
+        font-size: 1.5vw;
+        padding: 5px 10px;
+    } 
+}
+
+@media (width <= 1740px) and (width > 1355px) {
+    .container {
+        max-width: 91vw;
+        padding: 1.5vw 0px 4vw 0px;
+    }
+
+    .header .container {
+        padding: 1vw 0 2.5vw 0;
+    }
+
+    .header-nav__list {
+        gap: 25px;
+    }
+
+    .header-nav__list-item a {
+        font-size: 1.85vw;
+    }
+
+    .header-nav__list-item a:hover {
+        font-size: 2.1vw;
+    }
+
+    .section-title {
+        font-size: 3.5vw;
+    }
+
+    .slider-container {
+        max-width: 1100px;
+    }
+
+    .slide-image {
+        width: 450px;
+        height: 325px;
+    }
+
+    .slide-type {
+        font-size: 2vw;
+    }
+
+    .slide-description, .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .search-container {
+        justify-content: space-evenly;
+        gap: 0;
+    }
+
+    .animal-search {
+        padding: 15px 35px;
+        font-size: 2vw;
+        width: 70vw;
+    }
+
+    .suggestions-list {
+        width: 70vw;
+        font-size: 2vw;
+    }
+
+    .search-button {
+        font-size: 1.85vw;
+    }
+
+    .fact {
+        gap: 3vw;
+    }
+
+    .fact-text {
+        font-size: 2vw;
+    }
+
+    .animal-card {
+        width: 25vw;
+    }
+
+    .animal-card img {
+        height: 20vw;
+    }
+
+    .animal-card .location, .animal-card .phone {
+        font-size: 1.35vw;
+    }
+
+    .animal-card .date, .animal-card .user-type {
+        font-size: 1.2vw;
+    }
+
+    .search-form {
+        max-width: 55vw;
+    }
+
+    .form-group label, .search-form__submit {
+        font-size: 1.75vw;
+    }
+
+    .form-group input[type="text"], .form-group select {
+        font-size: 1.5vw;
+    }
+
+    .reviews-slider-container {
+        max-width: 60vw;
+    }
+
+    .review-author, .review-text, .review-date {
+        font-size: 1.5vw;
+    }
+
+    .slider-controls .slide-button {
+        font-size: 1.75vw;
+    }
+
+    .subscribe__wrapper, .subscriptionForm {
+        max-width: 50vw;
+    }
+
+    .subscriptionForm label, .subscriptionForm input[type="email"], .contact-info p, .contact-info a, .footer-nav a {
+        font-size: 1.5vw;
+    }
+
+    .subscriptionForm button {
+        font-size: 1.65vw;
+    }
+
+    .contact-info {
+        width: 55vw;
+    }
+}

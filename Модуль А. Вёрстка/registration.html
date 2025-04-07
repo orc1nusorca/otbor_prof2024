@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Регистрация || Новая жизнь</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header-nav">
+                <div class="header-nav__logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <ul class="header-nav__list">
+                    <li class="header-nav__list-item">
+                        <a href="#">Поиск</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Регистрация</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Личный кабинет</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Добавить</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Отзывы</a>
+                    </li>
+                </ul>
+                <a href="#" class="mobile__header-nav__menu-button">
+                    <svg width="49" height="34" viewBox="0 0 49 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 17H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 32H24" stroke="#424242" stroke-width="3" />
+                    </svg>
+                </a>
+                <!-- мобильное меню -->
+                <div class="mobile__header-nav__menu">
+                    <ul class="mobile__header-nav__list">
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Поиск</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Регистрация</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Личный кабинет</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Добавить</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section id="registerSection">
+            <div class="container">
+                <h2 class="section-title">Регистрация</h2>
+                <form class="registerForm" action="" method="post">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstName">Имя:</label>
+                        <input type="text" id="firstName" name="firstName" placeholder="Имя" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Фамилия:</label>
+                        <input type="text" id="lastName" name="lastName" placeholder="Фамилия" required>
+                    </div>
+                        <div class="form-group">
+                            <label for="phone">Телефон:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="8 (999) 999-99-99" pattern="^[+]?[0-9]{1,3}[-\s]?[(]?[0-9]{1,3}[)]?[-\s]?[0-9]{1,4}[-\s]?[0-9]{1,4}$" required>
+                        </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" name="password" placeholder="Пароль" required minlength="8">
+                    </div>
+                    <div class="form-group">
+                       <label for="confirmPassword">Повторите пароль:</label>
+                       <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Подтвердите пароль" required>
+                    </div>
+                    <div class="formRow">
+                       <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                       <label for="privacyPolicy">Я согласен на обработку персональных данных</label>
+                    </div> 
+                    <button type="submit">Зарегистрироваться</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p>Телефон: <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                    <p>e-mail: <a href="mailto:mail@newlife.ru">mail@newlife.ru</a></p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Найдено животное</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

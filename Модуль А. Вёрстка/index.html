@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Главная || Новая жизнь</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header-nav">
+                <div class="header-nav__logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <ul class="header-nav__list">
+                    <li class="header-nav__list-item">
+                        <a href="#">Поиск</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Регистрация</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Личный кабинет</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Добавить</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Отзывы</a>
+                    </li>
+                </ul>
+                <a href="#" class="mobile__header-nav__menu-button">
+                    <svg width="49" height="34" viewBox="0 0 49 34" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 17H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 32H24" stroke="#424242" stroke-width="3" />
+                    </svg>
+                </a>
+                <!-- мобильное меню -->
+                <div class="mobile__header-nav__menu">
+                    <ul class="mobile__header-nav__list">
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Поиск</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Регистрация</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Личный кабинет</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Добавить</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="post">
+            <div class="container">
+                <h2 class="section-title">Недавние объявления</h2>
+                <div class="slider-container">
+                    <div class="slider">
+                        <!-- Слайд 1 -->
+                        <div class="slide active">
+                            <img src="images/cat.png" alt="Фото кота" class="slide-image">
+                            <div class="slide-content">
+                                <h2 class="slide-type">Кот</h2>
+                                <p class="slide-description">Найден возле парка, ласковый и пушистый, явно домашний.</p>
+                                <a href="#" class="slide-button">Подробнее</a>
+                            </div>
+                        </div>
+                        <!-- Слайд 2 -->
+                         <div class="slide">
+                            <img src="images/dog.jpg" alt="Фото собаки" class="slide-image">
+                            <div class="slide-content">
+                                <h2 class="slide-type">Собака</h2>
+                                <p class="slide-description">Нашли в центре города, с ошейником, очень напугана.</p>
+                                <a href="#" class="slide-button">Подробнее</a>
+                            </div>
+                        </div>
+                        <!-- Слайд 3 -->
+                         <div class="slide">
+                            <img src="images/hamster.jpg" alt="Фото хомяка" class="slide-image">
+                            <div class="slide-content">
+                                <h2 class="slide-type">Хомяк</h2>
+                                <p class="slide-description">Маленький пушистик, бегает по двору, видимо, потерялся.</p>
+                                <a href="#" class="slide-button">Подробнее</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Индикация активного слайда -->
+                    <div class="slider-dots">
+                        <span class="dot active-dot"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="search" id="search">
+            <div class="container">
+                <h2 class="section-title">Быстрый поиск</h2>
+                <div class="search-container">
+                    <div class="search-container__wrapper">
+                        <input type="text" class="animal-search" placeholder="Введите вид животного" autocomplete="off">
+                        <ul id="suggestions-list" class="suggestions-list"></ul>
+                    </div>
+                    <button class="search-button">Найти</button>
+                </div>
+            </div>
+        </section>
+        <section class="facts">
+            <div class="container">
+                <h2 class="section-title">Факты о нашей компании</h2>
+                <div class="company-facts">
+                    <div class="fact">
+                        <img src="images/fact1.png" alt="Более 500 животных нашли дом" class="fact-icon">
+                        <p class="fact-text">Помогли найти более 500 животных.</p>
+                    </div>
+                    <div class="fact">
+                        <img src="images/fact2.png" alt="Более трех лет помогаем" class="fact-icon">
+                        <p class="fact-text">Более трех лет способствуем возвращению питомцев к хозяевам.</p>
+                    </div>
+                    <div class="fact">
+                        <img src="images/fact3.png" alt="Услуги бесплатно" class="fact-icon">
+                        <p class="fact-text">Все услуги оказываются бесплатно.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <sectoin class="findAnimals">
+            <div class="container">
+                <h2 class="section-title">Найденные животные</h2>
+                <div class="animal-cards-container">
+                    <div class="animal-card">
+                        <img src="images/dog.jpg" alt="Фото животного">
+                        <div class="location">Район: Центральный</div>
+                        <div class="phone">Телефон: +7-999-123-4567</div>
+                        <div class="date">Дата: 18-08-2024</div>
+                        <div class="user-type registered">Зарегистрированный</div>
+                    </div>
+                    <div class="animal-card">
+                          <img src="images/cat.png" alt="Фото животного">
+                          <div class="location">Район: Заводской</div>
+                          <div class="phone">Телефон: +7-999-987-6543</div>
+                          <div class="date">Дата: 17-08-2024</div>
+                          <div class="user-type unregistered">Незарегистрированный</div>
+                    </div>
+                    <div class="animal-card">
+                          <img src="images/dog2.jpg" alt="Фото животного">
+                          <div class="location">Район: Ленинский</div>
+                          <div class="phone">Телефон: +7-999-111-2233</div>
+                          <div class="date">Дата: 16-07-2024</div>
+                          <div class="user-type registered">Зарегистрированный</div>
+                    </div>
+                    <div class="animal-card">
+                          <img src="images/cat2.jpg" alt="Фото животного">
+                          <div class="location">Район: Советский</div>
+                          <div class="phone">Телефон: +7-999-444-5566</div>
+                          <div class="date">Дата: 15-08-2024</div>
+                          <div class="user-type unregistered">Незарегистрированный</div>
+                    </div>
+                    <div class="animal-card">
+                        <img src="images/hamster.jpg" alt="Фото животного">
+                        <div class="location">Район: Октябрьский</div>
+                        <div class="phone">Телефон: +7-999-777-8899</div>
+                        <div class="date">Дата: 14-08-2024</div>
+                        <div class="user-type registered">Зарегистрированный</div>
+                    </div>
+                    <div class="animal-card">
+                        <img src="images/parrot.jpg" alt="Фото животного">
+                        <div class="location">Район: Первомайский</div>
+                        <div class="phone">Телефон: +7-999-100-2000</div>
+                        <div class="date">Дата: 13-08-2024</div>
+                        <div class="user-type unregistered">Незарегистрированный</div>
+                    </div>
+                </div>
+            </div>
+        </sectoin>
+        <section class="searchForm">
+            <div class="container">
+                <h2 class="section-title">Поиск питомца</h2>
+                <form class="search-form">
+                    <div class="form-group">
+                        <label for="region">Район:</label>
+                        <input type="text" id="region" name="region" placeholder="Введите район" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="animal-type">Вид животного:</label>
+                        <select id="animal-type" name="animal-type" required>
+                            <option value="">Выберите вид</option>
+                            <option value="cat">Кошка</option>
+                            <option value="dog">Собака</option>
+                            <option value="squirrel">Суслик</option>
+                            <option value="ferret">Хорек</option>
+                            <option value="hamster">Хомяк</option>
+                            <option value="parrot">Попугай</option>
+                            <option value="another">Другое</option>
+                        </select>
+                    </div>
+                    <button class="search-form__submit" type="submit">Найти питомца</button>
+                </form>
+            </div>
+        </section>
+        <section class="reviews">
+            <div class="container">
+                <h2 class="section-title">Наши успехи: истории</h2>
+                <div class="reviews-slider-container">
+                    <div class="reviews-slider">
+                        <div class="review">
+                            <img src="images/cat.png" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Анна С.</h3>
+                            <p class="review-text">Спасибо огромное сайту! Нашли нашу кошечку через 2 дня! Все очень оперативно.</p>
+                            <p class="review-date">18-08-2024</p>
+                        </div>
+                        <div class="review">
+                            <img src="images/dog.jpg" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Иван П.</h3>
+                            <p class="review-text">Уже не верил, что найдем нашего песика, но вот чудо! Благодарим от всей души!</p>
+                            <p class="review-date">17-08-2024</p>
+                        </div>
+                        <div class="review">
+                            <img src="images/hamster.jpg" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Мария К.</h3>
+                            <p class="review-text">Наш хомячок вернулся домой благодаря вашему ресурсу! Вы делаете очень важное дело.</p>
+                            <p class="review-date">16-08-2024</p>
+                        </div>
+                        <div class="review">
+                            <img src="images/parrot.jpg" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Елена В.</h3>
+                            <p class="review-text">Нашли попугайчика очень быстро! Очень рады!</p>
+                            <p class="review-date">15-08-2024</p>
+                        </div>
+                        <div class="review">
+                            <img src="images/cat2.jpg" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Сергей А.</h3>
+                            <p class="review-text">Я благодарен всем, кто помогает найти наших потеряшек! Вы лучшие!.</p>
+                            <p class="review-date">14-08-2024</p>
+                        </div>
+                        <div class="review">
+                            <img src="images/dog2.jpg" alt="Фото питомца" class="review-image">
+                            <h3 class="review-author">Ольга М.</h3>
+                            <p class="review-text">Спасибо за то, что помогаете! Без вас мы бы не справились!</p>
+                            <p class="review-date">13-08-2024</p>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slide-button prev-button"> &lt; </button>
+                        <button class="slide-button next-button"> &gt; </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="subscribe">
+            <div class="container">
+                <div class="subscribe__wrapper">
+                    <h2 class="section-title">Подписка на наши новости</h2>
+                    <form class="subscriptionForm" action="" method="post">
+                        <div>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="formRow">
+                            <input type="checkbox" id="privacyPolicy" name="privacyPolicy" required>
+                            <label for="privacyPolicy">Я согласен на обработку персональных данных</label>
+                        </div>
+                        <button type="submit">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p>Телефон: <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                    <p>e-mail: <a href="mailto:mail@newlife.ru">mail@newlife.ru</a></p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Найдено животное</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

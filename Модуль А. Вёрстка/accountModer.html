@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Личный кабинет модератора || Новая жизнь</title>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header-nav">
+                <div class="header-nav__logo">
+                    <a href="index.html">
+                        <img src="images/logo.png" alt="logo">
+                    </a>
+                </div>
+                <ul class="header-nav__list">
+                    <li class="header-nav__list-item">
+                        <a href="#">Поиск</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Регистрация</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Личный кабинет</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Добавить</a>
+                    </li>
+                    <li class="header-nav__list-item">
+                        <a href="#">Отзывы</a>
+                    </li>
+                </ul>
+                <a href="#" class="mobile__header-nav__menu-button">
+                    <svg width="49" height="34" viewBox="0 0 49 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 17H49" stroke="#424242" stroke-width="3" />
+                        <path d="M0 32H24" stroke="#424242" stroke-width="3" />
+                    </svg>
+                </a>
+                <!-- мобильное меню -->
+                <div class="mobile__header-nav__menu">
+                    <ul class="mobile__header-nav__list">
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Поиск</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Регистрация</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Личный кабинет</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Добавить</a>
+                        </li>
+                        <li class="mobile__header-nav__list-item">
+                            <a href="#">Отзывы</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <section class="filtersCheck">
+            <div class="container">
+                <h2 class="section-title">Личный кабинет</h2>
+                <div class="filters">
+                    <h2>Фильтры и сортировка</h2>
+                    <div class="filter-group">
+                        <label for="sort-newest">
+                            <input type="radio" id="sort-newest" name="sort-order" value="newest" checked>
+                            По дате (сначала новые)
+                        </label>
+                        <label for="sort-oldest">
+                            <input type="radio" id="sort-oldest" name="sort-order" value="oldest">
+                            По дате (сначала старые)
+                        </label>
+                   </div>
+                   <div class="filter-group">
+                        <label for="filter-all">
+                            <input type="radio" id="filter-all" name="filter-status" value="all" checked>
+                            Все
+                        </label>
+                        <label for="filter-moderation">
+                            <input type="radio" id="filter-moderation" name="filter-status" value="moderation">
+                            На модерации
+                        </label>
+                        <label for="filter-found">
+                            <input type="radio" id="filter-found" name="filter-status" value="found">
+                            Найдено
+                        </label>
+                        <label for="filter-archived">
+                            <input type="radio" id="filter-archived" name="filter-status" value="archived">
+                            В архиве
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="announcement">
+            <div class="container">
+                <div id="announcements-container">
+                    <div class="ads-group moderation-ads" data-status="moderation">
+                        <div class="moderBlock">
+                            <h4>На модерации</h4>
+                            <div class="ad-buttons">
+                                <button class="edit-btn">Редактировать</button>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-25">
+                            <img class="ad-photo" src="images/parrot.jpg" alt="Фото птицы">
+                            <div>
+                                <p><strong>Район:</strong> Ленинский</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найдена в лесополосе, порода: попугай</p>
+                                <p><strong>Клеймо:</strong> Нет</p>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-26">
+                            <img class="ad-photo" src="images/dog2.jpg" alt="Фото собаки">
+                            <div>
+                                <p><strong>Район:</strong> Кировский</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найдена на улице, порода: дворняга</p>
+                                <p><strong>Клеймо:</strong> Нет</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ads-group found-ads" data-status="found">
+                        <div class="moderBlock">
+                            <h4>Найдено</h4>
+                            <div class="ad-buttons">
+                                <button class="edit-btn">Редактировать</button>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-20">
+                            <img class="ad-photo" src="images/cat2.jpg" alt="Фото кота">
+                            <div>
+                                <p><strong>Район:</strong> Первомайский</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найдена на крыше, порода: персидский</p>
+                                <p><strong>Клеймо:</strong> AA456</p>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-18">
+                            <img class="ad-photo" src="images/rabbit.jpg" alt="Фото кролика">
+                            <div>
+                                <p><strong>Район:</strong> Октябрьский</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найдена в саду, порода: карликовый</p>
+                                <p><strong>Клеймо:</strong> Нет</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ads-group archived-ads" data-status="archived">
+                        <div class="moderBlock">
+                            <h4>В архиве</h4>
+                            <div class="ad-buttons">
+                                <button class="edit-btn">Редактировать</button>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-10">
+                            <img class="ad-photo" src="images/hamster.jpg" alt="Фото хомяка">
+                            <div>
+                                <p><strong>Район:</strong> Железнодорожный</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найден в магазине, порода: сирийский</p>
+                                <p><strong>Клеймо:</strong> Нет</p>
+                            </div>
+                        </div>
+                        <div class="ad-item" data-date="2023-11-05">
+                            <img class="ad-photo" src="images/fish.jpg" alt="Фото рыбы">
+                            <div>
+                                <p><strong>Район:</strong> Советский</p>
+                                <p><strong>Дата:</strong> 22-11-2023</p>
+                                <p><strong>Подробности:</strong> Найдена в аквариуме, порода: золотая</p>
+                                <p><strong>Клеймо:</strong> Нет</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="contact-info">
+                    <p>Телефон: <a href="tel:+78001234567">8 (800) 123-45-67</a></p>
+                    <p>e-mail: <a href="mailto:mail@newlife.ru">mail@newlife.ru</a></p>
+                </div>
+                <nav class="footer-nav">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Регистрация</a></li>
+                        <li><a href="#">Авторизация</a></li>
+                        <li><a href="#">Личный кабинет</a></li>
+                        <li><a href="#">Найдено животное</a></li>
+                        <li><a href="#">Поиск</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
