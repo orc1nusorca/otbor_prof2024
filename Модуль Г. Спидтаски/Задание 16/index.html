@@ -1,0 +1,94 @@
+<!-- Случайное количество окружностей разного размера хаотично перемещаются по экрану. Если они касаются курсора мыши, то должны оттолкнуться от него и изменить свое направление -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Окружности</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let circles = [];
+        const numCircles = 50; // Количество окружностей
+
+        // Генерация случайных окружностей
+        for (let i = 0; i < numCircles; i++) {
+            const radius = Math.random() * 20 + 10; // Радиус от 10 до 30
+            circles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: radius,
+                dx: (Math.random() - 0.5) * 4, // Случайная скорость по X
+                dy: (Math.random() - 0.5) * 4  // Случайная скорость по Y
+            });
+        }
+
+        // Обработчик движения мыши
+        canvas.addEventListener('mousemove', (event) => {
+            const mouseX = event.clientX;
+            const mouseY = event.clientY;
+
+            circles.forEach(circle => {
+                const dx = circle.x - mouseX;
+                const dy = circle.y - mouseY;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < circle.radius) { // Если окружность касается курсора
+                    // Изменяем направление движения
+                    circle.dx += (circle.x - mouseX) / distance * 5; // Отталкивание
+                    circle.dy += (circle.y - mouseY) / distance * 5; // Отталкивание
+                }
+            });
+        });
+
+        // Основной цикл анимации
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Очистка канваса
+
+            circles.forEach(circle => {
+                // Обновление позиции окружности
+                circle.x += circle.dx;
+                circle.y += circle.dy;
+
+                // Проверка границ канваса
+                if (circle.x + circle.radius > canvas.width || circle.x - circle.radius < 0) {
+                    circle.dx *= -1; // Отражение по оси X
+                }
+                if (circle.y + circle.radius > canvas.height || circle.y - circle.radius < 0) {
+                    circle.dy *= -1; // Отражение по оси Y
+                }
+
+                // Рисование окружности
+                ctx.beginPath();
+                ctx.arc(circle.x, circle.y, circle.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(100, 150, 200, 0.7)';
+                ctx.fill();
+                ctx.strokeStyle = 'rgba(0, 0, 0, 0.7)';
+                ctx.stroke();
+            });
+
+            requestAnimationFrame(animate); // Запрос следующего кадра анимации
+        }
+
+        animate(); // Запуск анимации
+    </script>
+</body>
+</html>

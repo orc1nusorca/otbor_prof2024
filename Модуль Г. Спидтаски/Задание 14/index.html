@@ -1,0 +1,47 @@
+<!-- В центре страницы поместить квадрат. Менять его цвет в зависимости от курсора мыши (если курсор мыши в левой части экрана то полностью белый, если курсор мыши в правой части экрана то полностью черный) -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Цветной квадрат</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: bisque;
+        }
+        #square {
+            width: 200px; /* Ширина квадрата */
+            height: 200px; /* Высота квадрата */
+            background-color: white; /* Начальный цвет */
+            transition: background-color 0.3s; /* Плавный переход цвета */
+        }
+    </style>
+</head>
+<body>
+
+<div id="square"></div>
+
+<script>
+    const square = document.getElementById('square');
+
+    document.addEventListener('mousemove', (event) => {
+        const windowWidth = window.innerWidth;
+        const cursorX = event.clientX;
+
+        if (cursorX < windowWidth / 2) {
+            square.style.backgroundColor = 'white'; // Левое положение
+        } else {
+            square.style.backgroundColor = 'black'; // Правое положение
+        }
+    });
+</script>
+
+</body>
+</html>

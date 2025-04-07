@@ -1,0 +1,30 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.background-image {
+    background-image: url('background.jpg'); /* Замените на URL вашего изображения */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Высота на весь экран */
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 139, 0.7); /* Темно-синий цвет с прозрачностью */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white; /* Цвет текста */
+    font-size: 2.5em; /* Размер шрифта */
+}

@@ -1,0 +1,32 @@
+CREATE TABLE users (
+    user_id INT PRIMARY KEY,
+    username VARCHAR(100)
+);
+
+CREATE TABLE books (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(255)
+);
+
+CREATE TABLE ordered_books (
+    order_id INT PRIMARY KEY,
+    user_id INT,
+    book_id INT,
+    order_time DATETIME,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES books(book_id) ON DELETE CASCADE
+);
+
+SELECT 
+    u.user_id,
+    u.username,
+    ob.order_id,
+    ob.order_time,
+    ob.book_id,
+    b.title
+FROM 
+    ordered_books ob
+JOIN 
+    users u ON ob.user_id = u.user_id
+JOIN 
+    books b ON ob.book_id = b.book_id;

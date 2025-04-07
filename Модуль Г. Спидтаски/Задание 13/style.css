@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Занимает всю высоту страницы */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column; /* Вертикальная ориентация */
+}
+
+.header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%; /* Занимает всю ширину */
+    margin: 20px auto; /* Центрируем контейнер */
+    padding: 20px;
+    flex: 1; /* Занимает всё доступное пространство между заголовком и подвалом */
+}
+
+.main {
+    flex: 1; /* Основная часть занимает оставшееся пространство */
+    min-width: 300px; /* Минимальная ширина основной части */
+    margin-right: 20px; /* Отступ справа */
+}
+
+.sidebar {
+    width: 250px; /* Фиксированная ширина боковой панели */
+    min-width: 200px; /* Минимальная ширина боковой панели */
+}
+
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
+
+/* Адаптивные стили */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* На маленьких экранах элементы располагаются вертикально */
+        align-items: center; /* Центрируем элементы */
+        width: 100%; /* Убедитесь, что контейнер занимает всю ширину */
+    }
+
+    .main {
+        margin-right: 0; /* Убираем отступ справа на маленьких экранах */
+        margin-bottom: 20px; /* Добавляем отступ снизу для основного контента */
+        width: 100%; /* Основная часть занимает всю ширину */
+        flex: none;
+    }
+
+    .sidebar {
+        width: 100%; /* Боковая панель занимает всю ширину на маленьких экранах */
+        min-width: auto; /* Убираем минимальную ширину боковой панели */
+    }
+}
+
+@media (max-width: 350px) {
+    .header, .footer {
+        font-size: 14px; /* Уменьшаем размер шрифта на очень маленьких экранах */
+    }
+}
+
